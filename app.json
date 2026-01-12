@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rn_movie_app",
-    "slug": "rn_movie_app",
+    "name": "MovieTracker",
+    "slug": "MovieTracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
@@ -13,8 +13,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "",
+        "backgroundColor": "#ffffff",
+        "foregroundImage": "./assets/images/logo.png",
         "backgroundImage": "",
         "monochromeImage": ""
       },
@@ -30,7 +30,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/logo.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff",
