@@ -1,10 +1,18 @@
+import MovieCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { fetchMovies } from "@/services/api";
 import useFetch from "@/services/useFetch";
 import { useRouter } from "expo-router";
-import { ActivityIndicator, Image, ScrollView, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  Image,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
 
 export default function Index() {
   const router = useRouter();
@@ -47,6 +55,38 @@ export default function Index() {
             />
             <>
               <Text className="tet-lg text-white mt-5 mb-3">Latest Movies</Text>
+
+              <FlatList
+                className="mt-2 pb-32"
+                data={movies}
+                keyExtractor={(item) => item.id.toString()}
+                numColumns={3}
+                columnWrapperStyle={{
+                  justifyContent: "flex-start",
+                  gap: 20,
+                  paddingRight: 5,
+                  marginBottom: 10,
+                }}
+                scrollEnabled={false}
+                renderItem={({ item }) => (
+                  // <View
+                  //   className="bg-secondary rounded-lg p-3 mb-3"
+                  //   style={{ flex: 1, aspectRatio: 0.7 }}
+                  // >
+                  //   <Image
+                  //     source={{
+                  //       uri: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
+                  //     }}
+                  //     className="w-full h-40 rounded-md mb-2"
+                  //     resizeMode="cover"
+                  //   />
+                  //   <Text className="text-white text-sm" numberOfLines={1}>
+                  //     {item.title}
+                  //   </Text>
+                  // </View>
+                  <MovieCard {...item} />
+                )}
+              />
             </>
           </View>
         )}
