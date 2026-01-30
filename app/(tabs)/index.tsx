@@ -54,7 +54,9 @@ export default function Index() {
               placeholder="Search Movies..."
             />
             <>
-              <Text className="tet-lg text-white mt-5 mb-3">Latest Movies</Text>
+              <Text className="text-lg text-white mt-5 mb-3">
+                Latest Movies
+              </Text>
 
               <FlatList
                 className="mt-2 pb-32"
