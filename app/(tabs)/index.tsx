@@ -24,7 +24,7 @@ export default function Index() {
   } = useFetch(() =>
     fetchMovies({
       query: "",
-    })
+    }),
   );
 
   return (
@@ -68,24 +68,7 @@ export default function Index() {
                   marginBottom: 10,
                 }}
                 scrollEnabled={false}
-                renderItem={({ item }) => (
-                  // <View
-                  //   className="bg-secondary rounded-lg p-3 mb-3"
-                  //   style={{ flex: 1, aspectRatio: 0.7 }}
-                  // >
-                  //   <Image
-                  //     source={{
-                  //       uri: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
-                  //     }}
-                  //     className="w-full h-40 rounded-md mb-2"
-                  //     resizeMode="cover"
-                  //   />
-                  //   <Text className="text-white text-sm" numberOfLines={1}>
-                  //     {item.title}
-                  //   </Text>
-                  // </View>
-                  <MovieCard {...item} />
-                )}
+                renderItem={({ item }) => <MovieCard {...item} />}
               />
             </>
           </View>
